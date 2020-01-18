@@ -244,9 +244,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD( TERM " -t weechat -e weechat")},
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/chcolor_gui") },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/toggle_caffeine") },
-	{ MODKEY,                       XK_j,      spawn,              SHCMD("scrot /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
-	{ MODKEY|ShiftMask,             XK_j,      spawn,          SHCMD("scrot -u /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
-	{ MODKEY|ControlMask,           XK_j,      spawn,          SHCMD("scrot -s /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
+	{ MODKEY,                       XK_z,      spawn,              SHCMD("scrot /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
+	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("scrot -u /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
+	{ MODKEY|ControlMask,           XK_z,      spawn,          SHCMD("scrot -s /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
 	{ MODKEY,                       XK_Delete, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/dmenu_computer") },
 	{ MODKEY,                       XK_x, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/mpdmenu :: -l 3") },
 	
