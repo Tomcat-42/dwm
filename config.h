@@ -223,7 +223,7 @@ static Key keys[] = {
 
 
 	//Outros
-	{ MODKEY|ControlMask,           XK_k,      spawn,          SHCMD("setxkbmap -model abnt2 -layout br ; xset r rate 280 35") },
+	//{ MODKEY|ControlMask,           XK_k,      spawn,          SHCMD("setxkbmap -model abnt2 -layout br ; xset r rate 280 35") },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/lock_n_off.sh") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/desligar_monitor.sh off") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/lock_n_off_n_suspend.sh") },
