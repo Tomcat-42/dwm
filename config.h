@@ -239,7 +239,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/desligar_monitor.sh off") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/lock_n_off_n_suspend.sh") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/redshift_dmenu") },
-	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/tlp_dmenu") },
+	//{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/tlp_dmenu") },
 	{ 0,                            CONFIG_LAUNCH,spawn,       SHCMD("/home/pablo951_br/Downloads/scripts/toggletouchpad") },
 	//{ MODKEY,                  XK_Tab,      spawn,          SHCMD("rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font \"Droid Sans 16\" ") },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
