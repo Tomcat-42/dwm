@@ -118,6 +118,7 @@ static const Rule rules[] = {
 	{ TERM ,      NULL,       CLIFM,      1 << 1,       0,           -1 },
 	{ "Pcmanfm",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "firefox",  NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "firefox",  "Devtools", NULL,		  0,            1,           -1 },
 	{ "qutebrowser",NULL,     NULL,       1 << 2,       0,           -1 },
 	{ "Tor Browser",NULL,     NULL,       1 << 2,       0,           -1 },
 	{ TERM ,      NULL,       "ncmpcpp",  1 << 3,       0,           -1 },
