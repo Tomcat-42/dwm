@@ -194,6 +194,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { TERM, NULL };
 static const char *shellpythoncmd[]  = { TERM, "-t", "Shell_python", "-e", "python",  NULL };
+static const char *password_manager[]  = {"spm-dmenu",  NULL };
 static const char *browsercmd[]  = { BROWSER, NULL };
 static const char *guiFMcmd[]  = { GUIFM, NULL };
 static const char *cliFMcmd[]  = { TERM, "-t", "ranger", "-e", CLIFM, NULL };
@@ -248,7 +249,7 @@ static Key keys[] = {
 	//{ MODKEY,                  XK_Tab,      spawn,          SHCMD("rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font \"Droid Sans 16\" ") },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_f,      spawn,          {.v = browsercmd} },
-	{ MODKEY,                       XK_p,      spawn,          {.v = shellpythoncmd} },
+	{ MODKEY,                       XK_p,      spawn,          {.v = password_manager} },
 	{ MODKEY,                       XK_m,      spawn,          {.v = guiFMcmd} },
 	{ MODKEY,                       XK_r,      spawn,          {.v = cliFMcmd} },
 	{ MODKEY,                       XK_n,      spawn,          {.v = ncmpcpp} },
