@@ -73,33 +73,21 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 */
 
-/*
-static const char norm_fg[] = "#c4c5c6";
-static const char norm_bg[] = "#15181c";
-static const char norm_border[] = "#4f5154";
+static const char norm_fg[] = "#e5e9f0";
+static const char norm_bg[] = "#2E3440";
+static const char norm_border[] = "#4C566A";
 
-static const char sel_fg[] = "#c4c5c6";
-static const char sel_bg[] = "#35538d";
-static const char sel_border[] = "#35538d";
-*/
-//static const char urg_fg[] = "#c5c5c5";
-//static const char urg_bg[] = "#264364";
-//static const char urg_border[] = "#264364";
+static const char sel_fg[] = "#2E3440";
+static const char sel_bg[] = "#88c0d0";
+static const char sel_border[] = "#8FBCBB";
 
-static const char norm_fg[] = "#f7f7fb";
-static const char norm_bg[] = "#282936";
-static const char norm_border[] = "#535252";
-
-static const char sel_fg[] = "#282936";
-static const char sel_bg[] = "#66d9ef";
-static const char sel_border[] = "#b45bcf";
 
 static const char *colors[][3]      = {
     /*               fg           bg         border                         */
     [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
     [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
-//    [SchemeUrg] =  { urg_fg,      urg_bg,    urg_border },
 };
+
 #endif
 
 
@@ -158,6 +146,8 @@ static const Rule rules[] = {
 	{ TERM ,      NULL,       "calendario",1 << 8,      0,           -1 },
 	{ "processing-app-Base" , NULL, NULL, 1 << 8,       0,           -1 },
 	{ TERM ,      NULL,       "nload",    1 << 8,       0,           -1 },
+	{ "Microsoft Teams - Preview" , NULL, NULL, 1 << 8, 0,     -1 },
+	{ NULL, NULL, "Notificação do Microsoft Teams", 1 << 9, 1,     -1 },
 };
 
 /* layout(s) */
