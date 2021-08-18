@@ -903,6 +903,10 @@ drawbar(Monitor *m)
 			/* drw_rect(drw, x + boxw, 0, w - ( 2 * boxw + 1), boxw, */
 			    /* m == selmon && selmon->sel && selmon->sel->tags & 1 << i, */
 			    /* urg & 1 << i); */
+
+    /*underline*/
+    if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
+      drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
     
     /* Clients dots */
 		for (c = m->clients; c; c = c->next) {
