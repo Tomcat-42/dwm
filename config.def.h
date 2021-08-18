@@ -1,7 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#include "vanitygaps.c"
-#include "movestack.c"
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
@@ -69,6 +67,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const int attachdirection = 0;    /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
+#include "vanitygaps.c"
+#include "movestack.c"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
