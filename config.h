@@ -62,6 +62,13 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 
+/*  Display modes of the tab bar: never shown, always shown, shown only in  */
+/*  monocle mode in the presence of several windows.                        */
+/*  Modes after showtab_nmodes are disabled.                                */
+enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always};
+static const int showtab = showtab_auto;        /* Default tab bar show mode */
+static const int toptab = 1;               /* False means bottom tab bar */
+
 static const char *fonts[]          = { FONT, FONT2 };
 static const char dmenufont[]       = FONT;
 
@@ -111,15 +118,15 @@ static const char *colors[][4]      = {
 static const char *tags[] = { "壱", "弐", "参", "四","五", "六", "七", "八", "九" };
 
 static const char *tagsel[][2] = {
-	{ "#1e1f26", "#50fa7b" },
-	{ "#1e1f26", "#bd93f9" },
-	{ "#1e1f26", "#ff5555" },
-	{ "#1e1f26", "#f1fa8c" },
-	{ "#1e1f26", "#8be9fd" },
-	{ "#1e1f26", "#6272a4" },
-	{ "#1e1f26", "#ffb86c" },
-	{ "#1e1f26", "#ff79c6" },
-	{ "#1e1f26", "#44475a" },
+	{  "#50fa7b", "#1e1f26"},
+	{  "#bd93f9", "#1e1f26"},
+	{  "#ff5555", "#1e1f26"},
+	{  "#f1fa8c", "#1e1f26"},
+	{  "#8be9fd", "#1e1f26"},
+	{  "#6272a4", "#1e1f26"},
+	{  "#ffb86c", "#1e1f26"},
+	{  "#ff79c6", "#1e1f26"},
+	{  "#44475a", "#1e1f26"},
 };
 
 static const unsigned int ulinepad = 5;	/* horizontal padding between the underline and tag */
@@ -197,18 +204,19 @@ static const int attachdirection = 5;    /* 0 default, 1 above, 2 aside, 3 below
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "H[]",      deck },
-	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
+	{ ">M>",      centeredfloatingmaster },
+	{ "|M|",      centeredmaster },
+	{ "[]=",      tile },    /* first entry is default */
 	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },
+	{ "DD",     doubledeck },
 	{ "TTT",      bstack },
 	{ "===",      bstackhoriz },
 	{ "HHH",      grid },
 	{ "###",      nrowgrid },
 	{ "---",      horizgrid },
 	{ ":::",      gaplessgrid },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
