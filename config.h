@@ -41,8 +41,9 @@
 #define CLIFM "ranger"
 
 /* Fontes */
-#define FONT "Iosevka Nerd Font:size=10:antialias=false:autohint=false"
-#define FONT2 "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true"
+#define FONT "Iosevka Nerd Font:size=11:antialias=true:autohint=true"
+//#define FONT2 "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true"
+#define FONT2 "Iosevka Term:size=11:antialias=true:autohint=true"
 
 /* Cores do pywal */
 #define PYWAL 0
@@ -58,7 +59,7 @@ static const unsigned int gappov    = 0;       /* vert outer gap between windows
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 
@@ -72,39 +73,39 @@ static const int toptab = 1;               /* False means bottom tab bar */
 static const char *fonts[]          = { FONT, FONT2 };
 static const char dmenufont[]       = FONT;
 
-static const char norm_fg[] = "#FFFFFF";
-static const char norm_bg[] = "#1e1f26";
-static const char norm_border[] = "#bd93f9";
-static const char norm_float[] = "#50fa7b";
+static const char norm_fg[] = "#fff1e8";
+static const char norm_bg[] = "#000000";
+static const char norm_border[] = "#008751";
+static const char norm_float[] = "#008751";
 
+static const char sel_fg[] = "#fff1e8";
+static const char sel_bg[] = "#00e756";
+static const char sel_border[] = "#fff1e8";
+static const char sel_float[] = "#fff1e8";
 
-static const char sel_fg[] = "#bd93f9";
-static const char sel_bg[] = "#1e1f26";
-static const char sel_border[] = "#bd93f9";
-static const char sel_float[] = "#50fa7b";
+static const char urg_fg[] = "#fff1e8";
+static const char urg_bg[] = "#ff004d";
+static const char urg_border[] = "#ff004d";
+static const char urg_float[] = "#ff004d";
 
-static const char urg_fg[] = "#bd93f9";
-static const char urg_bg[] = "#1e1f26";
-static const char urg_border[] = "#bd93f9";
-static const char urg_float[] = "#50fa7b";
 
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#29adff";
 
-static const char col_col1[] = "#f8f8f2";
-static const char col_col2[] = "#A4FFFF";
-static const char col_col3[] = "##FF92DF";
-static const char col_col4[] = "#6272a4";
-static const char col_col5[] = "#8be9fd";
-static const char col_col6[] = "#50fa7b";
-static const char col_col7[] = "#ffb86c";
-static const char col_col8[] = "#bd93f9";
-static const char col_col9[] = "#ff5555";
-static const char col_col10[] = "#f1fa8c";
-static const char col_col11[] = "#ff79c6";
+static const char col_col1[] = "#5f574f";
+static const char col_col2[] = "#ff004d";
+static const char col_col3[] = "#00e756";
+static const char col_col4[] = "#fff024";
+static const char col_col5[] = "#83769c";
+static const char col_col6[] = "#ff77a8";
+static const char col_col7[] = "#29adff";
+static const char col_col8[] = "#5f574f";
+static const char col_col9[] = "#008751";
+static const char col_col10[] = "#fff1e8";
+static const char col_col11[] = "#000000";
 
 
 static const char *colors[][4]      = {
@@ -118,15 +119,15 @@ static const char *colors[][4]      = {
 static const char *tags[] = { "壱", "弐", "参", "四","五", "六", "七", "八", "九" };
 
 static const char *tagsel[][2] = {
-	{  "#50fa7b", "#1e1f26"},
-	{  "#bd93f9", "#1e1f26"},
-	{  "#ff5555", "#1e1f26"},
-	{  "#f1fa8c", "#1e1f26"},
-	{  "#8be9fd", "#1e1f26"},
-	{  "#6272a4", "#1e1f26"},
-	{  "#ffb86c", "#1e1f26"},
-	{  "#ff79c6", "#1e1f26"},
-	{  "#44475a", "#1e1f26"},
+	{"#1e1f26",  "#ff004d"},
+	{"#1e1f26",  "#00e756"},
+	{"#1e1f26",  "#fff024"},
+	{"#1e1f26",  "#83769c"},
+	{"#1e1f26",  "#ff77a8"},
+	{"#1e1f26",  "#29adff"},
+	{"#1e1f26",  "#5f574f"},
+	{"#1e1f26",  "#ff79c6"},
+	{"#1e1f26",  "#008751"},
 };
 
 static const unsigned int ulinepad = 5;	/* horizontal padding between the underline and tag */
@@ -411,4 +412,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
