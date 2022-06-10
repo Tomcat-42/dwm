@@ -50,7 +50,7 @@
 
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const unsigned int gappih    = 1;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 1;       /* vert inner gap between windows */
@@ -75,13 +75,13 @@ static const char dmenufont[]       = FONT;
 
 static const char norm_fg[] = "#fff1e8";
 static const char norm_bg[] = "#000000";
-static const char norm_border[] = "#008751";
-static const char norm_float[] = "#008751";
+static const char norm_border[] = "#000000";
+static const char norm_float[] = "#000000";
 
 static const char sel_fg[] = "#fff1e8";
 static const char sel_bg[] = "#00e756";
-static const char sel_border[] = "#fff1e8";
-static const char sel_float[] = "#fff1e8";
+static const char sel_border[] = "#83769c";
+static const char sel_float[] = "#83769c";
 
 static const char urg_fg[] = "#fff1e8";
 static const char urg_bg[] = "#ff004d";
@@ -95,14 +95,14 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#29adff";
 
-static const char col_col1[] = "#5f574f";
+static const char col_col1[] = "#ffffff";
 static const char col_col2[] = "#ff004d";
 static const char col_col3[] = "#00e756";
 static const char col_col4[] = "#fff024";
 static const char col_col5[] = "#83769c";
 static const char col_col6[] = "#ff77a8";
 static const char col_col7[] = "#29adff";
-static const char col_col8[] = "#5f574f";
+static const char col_col8[] = "#ffffff";
 static const char col_col9[] = "#008751";
 static const char col_col10[] = "#fff1e8";
 static const char col_col11[] = "#000000";
@@ -125,7 +125,7 @@ static const char *tagsel[][2] = {
 	{"#1e1f26",  "#83769c"},
 	{"#1e1f26",  "#ff77a8"},
 	{"#1e1f26",  "#29adff"},
-	{"#1e1f26",  "#5f574f"},
+	{"#1e1f26",  "#ffffff"},
 	{"#1e1f26",  "#ff79c6"},
 	{"#1e1f26",  "#008751"},
 };
@@ -245,9 +245,9 @@ static const char *guiFMcmd[]  = { GUIFM, NULL };
 static const char *cliFMcmd[]  = { TERM, "-t", "ranger", "-e", CLIFM, NULL };
 static const char *ncmpcpp[]  = { TERM, "-t", "ncmpcpp", "-e", "ncmpcpp", NULL };
 /* static const char *netmngr[]  = { "networkmanager_dmenu", NULL }; */
-static const char *netmngr[]  = { "/home/pablo951_br/Downloads/scripts/dmenu_connection_manager", NULL };
+static const char *netmngr[]  = { "/home/pablo/scripts/dmenu_connection_manager", NULL };
 
-static const char *quick_file_open[]  = { "st", "-i", "-g", "160x10+0+0", "-c", "quick_file_open", "-n", "quick_file_open","-t", "quick_file_open", "-e", "/home/pablo951_br/Downloads/scripts/quick_file_open", NULL };
+static const char *quick_file_open[]  = { "st", "-i", "-g", "160x10+0+0", "-c", "quick_file_open", "-n", "quick_file_open","-t", "quick_file_open", "-e", "/home/pablo/scripts/quick_file_open", NULL };
 
 static Key keys[] = {
   /* Custom Keys */
@@ -270,33 +270,33 @@ static Key keys[] = {
 	{ 0,                            SND_DEC,   spawn,          SHCMD("amixer set Master -q 5%-")},
 	{ 0,                            SND_MUTE, spawn,          SHCMD("amixer -q sset Master,0 toggle")},
 	{ 0,                            MIC_MUTE, spawn,          SHCMD("amixer set Capture toggle")},
-	{ 0,                            MONIT_SEL, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/displayselect")},
-	{ 0,                            WIFI_TOGGLE, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/toggle_wifi")},
-	{ 0,                            FAVORITES,     spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/search")},
-	{ MODKEY,                       XK_period, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/mpdnotify")},
+	{ 0,                            MONIT_SEL, spawn,          SHCMD("/home/pablo/scripts/displayselect")},
+	{ 0,                            WIFI_TOGGLE, spawn,          SHCMD("/home/pablo/scripts/toggle_wifi")},
+	{ 0,                            FAVORITES,     spawn,          SHCMD("/home/pablo/scripts/search")},
+	{ MODKEY,                       XK_period, spawn,          SHCMD("/home/pablo/scripts/mpdnotify")},
 	
 	//F1-F12 keys
 	{ MODKEY,                       XK_F1,     spawn,          SHCMD(TERM " -t newsboat -e newsboat")},
 	{ MODKEY,                       XK_F2,     spawn,          SHCMD(TERM " -t clima -e 'curl wttr.in'")},
-	{ MODKEY,                       XK_F3,     spawn,          SHCMD(TERM " -t calendario -e 'bash /home/pablo951_br/Downloads/scripts/binding_calcurse.sh'")},
-	{ MODKEY,                       XK_F5,     spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/dmenu_mount")},
-	{ MODKEY,                       XK_F6,     spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/dmenu_umount")},
+	{ MODKEY,                       XK_F3,     spawn,          SHCMD(TERM " -t calendario -e 'bash /home/pablo/scripts/binding_calcurse.sh'")},
+	{ MODKEY,                       XK_F5,     spawn,          SHCMD("/home/pablo/scripts/dmenu_mount")},
+	{ MODKEY,                       XK_F6,     spawn,          SHCMD("/home/pablo/scripts/dmenu_umount")},
 	{ MODKEY,                       XK_F8,     spawn,          SHCMD(TERM " -t nload -e nload")},
-	{ MODKEY,                       XK_F9,     spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/webcam")},
-	{ MODKEY,                       XK_F10,    spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/dmenu_record")},
+	{ MODKEY,                       XK_F9,     spawn,          SHCMD("/home/pablo/scripts/webcam")},
+	{ MODKEY,                       XK_F10,    spawn,          SHCMD("/home/pablo/scripts/dmenu_record")},
 
 
 	//Outros
 	//{ MODKEY|ControlMask,           XK_k,      spawn,          SHCMD("setxkbmap -model abnt2 -layout br ; xset r rate 280 35") },
-	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/lock_n_off.sh") },
-	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/desligar_monitor.sh off") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/lock_n_off_n_suspend.sh") },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/redshift_dmenu") },
-	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/tlp_dmenu") },
-	{ 0,                            CONFIG_LAUNCH,spawn,       SHCMD("/home/pablo951_br/Downloads/scripts/toggletouchpad") },
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("/home/pablo/scripts/lock_n_off.sh") },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("/home/pablo/scripts/desligar_monitor.sh off") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("/home/pablo/scripts/lock_n_off_n_suspend.sh") },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("/home/pablo/scripts/redshift_dmenu") },
+	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("/home/pablo/scripts/tlp_dmenu") },
+	{ 0,                            CONFIG_LAUNCH,spawn,       SHCMD("/home/pablo/scripts/toggletouchpad") },
 	//{ MODKEY,                  XK_Tab,      spawn,          SHCMD("rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font \"Droid Sans 16\" ") },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_Tab,    spawn,           SHCMD("/home/pablo951_br/Downloads/scripts/switch") },
+	{ MODKEY|ShiftMask,             XK_Tab,    spawn,           SHCMD("/home/pablo/scripts/switch") },
 	{ MODKEY,                       XK_f,      spawn,          {.v = browsercmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = password_manager} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = quick_file_open} },
@@ -307,24 +307,24 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,      spawn,          {.v = ncmpcpp} },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = netmngr} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,              XK_Insert, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/showclip") },
-	{ MODKEY|ControlMask,            XK_Insert, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/xcqr") },
+	{ MODKEY|ShiftMask,              XK_Insert, spawn,          SHCMD("/home/pablo/scripts/showclip") },
+	{ MODKEY|ControlMask,            XK_Insert, spawn,          SHCMD("/home/pablo/scripts/xcqr") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD( TERM " -t weechat -e weechat")},
-	//{ MODKEY,                       XK_c,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/chcolor_gui") },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/toggle_caffeine") },
+	//{ MODKEY,                       XK_c,      spawn,          SHCMD("/home/pablo/scripts/chcolor_gui") },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("/home/pablo/scripts/toggle_caffeine") },
 	{ MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("xcolor | xsel -i -b") },
-	{ 0,                       XK_Print,  spawn,              SHCMD("/home/pablo951_br/Downloads/scripts/scrot_dmenu") },
-	//{ MODKEY,                       XK_Print,     spawn,              SHCMD("scrot /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
-	//{ MODKEY|ShiftMask,             XK_Print,     spawn,          SHCMD("scrot -u /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
-	//{ MODKEY|ControlMask,           XK_Print,     spawn,          SHCMD("scrot -s /home/pablo951_br/`date +%Y-%m-%d_%H:%M:%S`.png") },
-	{ MODKEY,                       XK_Delete, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/dmenu_computer") },
-	{ MODKEY,                       XK_x, spawn,          SHCMD("/home/pablo951_br/Downloads/scripts/mpdmenu :: -l 3") },
+	{ 0,                       XK_Print,  spawn,              SHCMD("/home/pablo/scripts/scrot_dmenu") },
+	//{ MODKEY,                       XK_Print,     spawn,              SHCMD("scrot /home/pablo/`date +%Y-%m-%d_%H:%M:%S`.png") },
+	//{ MODKEY|ShiftMask,             XK_Print,     spawn,          SHCMD("scrot -u /home/pablo/`date +%Y-%m-%d_%H:%M:%S`.png") },
+	//{ MODKEY|ControlMask,           XK_Print,     spawn,          SHCMD("scrot -s /home/pablo/`date +%Y-%m-%d_%H:%M:%S`.png") },
+	{ MODKEY,                       XK_Delete, spawn,          SHCMD("/home/pablo/scripts/dmenu_computer") },
+	{ MODKEY,                       XK_x, spawn,          SHCMD("/home/pablo/scripts/mpdmenu :: -l 3") },
 	
 	//teclas especiais
 	{ 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("xbacklight -dec 10") },
 	{ 0,                            XF86XK_MonBrightnessUp, spawn, SHCMD("xbacklight -inc 10") },
 	//{ 0,                            XF86XK_AudioPlay, spawn, SHCMD("mpc toggle") },
-	{ 0,                            XF86XK_Sleep, spawn, SHCMD("/home/pablo951_br/Downloads/scripts/lock_n_off.sh") },
+	{ 0,                            XF86XK_Sleep, spawn, SHCMD("/home/pablo/scripts/lock_n_off.sh") },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ 0     ,                       SUPER,      spawn,          {.v = dmenucmd } },
 
