@@ -52,8 +52,8 @@
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
-static const unsigned int gappih    = 1;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 1;       /* vert inner gap between windows */
+static const unsigned int gappih    = 0;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 0;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
@@ -224,7 +224,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 /* #define MODKEY Mod1Mask */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -266,10 +266,10 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,             XK_bracketleft,   spawn,          SHCMD("mpc volume +5")},
 	//{ 0,                            KP_ENTER,  spawn,          SHCMD("mpc single")},
 	//volume keys
-	{ 0,                            SND_INC,     spawn,          SHCMD("amixer set Master -q 5%+")},
-	{ 0,                            SND_DEC,   spawn,          SHCMD("amixer set Master -q 5%-")},
-	{ 0,                            SND_MUTE, spawn,          SHCMD("amixer -q sset Master,0 toggle")},
-	{ 0,                            MIC_MUTE, spawn,          SHCMD("amixer set Capture toggle")},
+	{ 0,                            SND_INC,     spawn,          SHCMD("pamixer -i 5")},
+	{ 0,                            SND_DEC,   spawn,          SHCMD("pamixer -d 5")},
+	{ 0,                            SND_MUTE, spawn,          SHCMD("pamixer -t")},
+	{ 0,                            MIC_MUTE, spawn,          SHCMD("pamixer --default-source -t")},
 	{ 0,                            MONIT_SEL, spawn,          SHCMD("/home/pablo/scripts/displayselect")},
 	{ 0,                            WIFI_TOGGLE, spawn,          SHCMD("/home/pablo/scripts/toggle_wifi")},
 	{ 0,                            FAVORITES,     spawn,          SHCMD("/home/pablo/scripts/search")},
@@ -326,7 +326,7 @@ static Key keys[] = {
 	//{ 0,                            XF86XK_AudioPlay, spawn, SHCMD("mpc toggle") },
 	{ 0,                            XF86XK_Sleep, spawn, SHCMD("/home/pablo/scripts/lock_n_off.sh") },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
-	{ 0     ,                       SUPER,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 
 
 	/* modifier                     key        function        argument */
@@ -382,10 +382,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_comma,  focusmon,       {.i = +1 } },
+	{ MODKEY,                       XK_period, focusmon,       {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
