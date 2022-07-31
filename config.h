@@ -169,7 +169,7 @@ static const Rule rules[] = {
 	//{ "MPlayer",                 NULL,                 NULL,                                 1 << 5,                     1,                1,             0,0                       ,                              -1 },
 	{ "MPlayer",                  NULL,                 NULL,                                 0,                          1,                1,               0,                      0,                             -1 },
 	{ "ffplay",                   NULL,                 NULL,                                 1 << 5,                     1,                1,               0,                      0,                             -1 },
-	{ "Gimp",                     NULL,                 NULL,                                 1 << 6,                     0,                0,               0,                      0,                             -1 },
+	{ "Gimp",                     NULL,                 NULL,                                 1 << 6,                     1,                1,               0,                      0,                             -1 },
 	{ "Leafpad",                  NULL,                 NULL,                                 1 << 6,                     0,                0,               0,                      0,                             -1 },
 	{ "Libreoffice",              NULL,                 NULL,                                 1 << 6,                     0,                0,               0,                      0,                             -1 },
 	{ "Libreoffice-writer",       NULL,                 NULL,                                 1 << 6,                     0,                0,               0,                      0,                             -1 },
