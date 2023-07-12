@@ -42,11 +42,11 @@
 
 /* Fontes */
 #define FONT "Iosevka Nerd Font:size=11:antialias=true:autohint=true"
-//#define FONT2 "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true"
-#define FONT2 "Iosevka Term:size=11:antialias=true:autohint=true"
+#define FONT2 "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true"
+//#define FONT2 "Iosevka Term:size=11:antialias=true:autohint=true"
 
 /* Cores do pywal */
-#define PYWAL 0
+#define PYWAL 1
 
 
 /* appearance */
@@ -319,7 +319,7 @@ static Key keys[] = {
 	//{ MODKEY|ControlMask,           XK_Print,     spawn,          SHCMD("scrot -s /home/pablo/`date +%Y-%m-%d_%H:%M:%S`.png") },
 	{ MODKEY,                       XK_Delete, spawn,          SHCMD("/home/pablo/scripts/dmenu_computer") },
 	{ MODKEY,                       XK_x, spawn,          SHCMD("/home/pablo/scripts/mpdmenu :: -l 3") },
-	{ MODKEY,                       XK_k, spawn,          SHCMD("/home/pablo/scripts/dmenu_xkb") },
+	{ MODKEY,                       XK_a, spawn,          SHCMD("/home/pablo/scripts/dmenu_xkb") },
 	{ MODKEY,                       XK_g, spawn,          SHCMD("/home/pablo/scripts/dmenu_gpu") },
 	
 	//teclas especiais
@@ -328,7 +328,7 @@ static Key keys[] = {
 	//{ 0,                            XF86XK_AudioPlay, spawn, SHCMD("mpc toggle") },
 	{ 0,                            XF86XK_Sleep, spawn, SHCMD("/home/pablo/scripts/lock_n_off.sh") },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = dmenucmd } },
 
 
 	/* modifier                     key        function        argument */
